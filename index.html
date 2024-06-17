@@ -131,13 +131,17 @@
             <source src="images/metaurban.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video></div>
+            <img src='images/cohabitant_populating.png' width=100% height=100%>
           </div>
           <script type="text/javascript">
             function metaurban_start() {
               document.getElementById('metaurban_image').style.opacity = "1";
             }
   
-            metaurban_start()
+            function metaurban_stop() {
+              document.getElementById('metaurban_image').style.opacity = "0";
+            }
+            metaurban_stop()
           </script>
         </td>
         <td style="width:75%;vertical-align:middle">
