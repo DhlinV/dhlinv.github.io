@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-12-01
+date: -
 inline: true
 related_posts: false
 ---
 
-Only for test.
+-
