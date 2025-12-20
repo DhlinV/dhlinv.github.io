@@ -8,6 +8,14 @@
 
   "education": [
     {
+      "institution": "University of California, Los Angeles",
+      "location": "Los Angeles, California",
+      "area": "Computer Science",
+      "studyType": "PhD",
+      "startDate": "2025-09-01",
+      "endDate": "Present"
+    },
+    {
       "institution": "Tsinghua University",
       "location": "Haidian, Beijing",
       "area": "Control Science and Engineering",
