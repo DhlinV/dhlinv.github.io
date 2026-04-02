@@ -4,6 +4,11 @@
 
 // Typography
 
+html,
+body {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
 p,
 h1,
 h2,
@@ -693,6 +698,7 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
 
       .preview {
+        border-radius: 4px !important;
       }
 
       .abbr {
