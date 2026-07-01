@@ -1,4 +1,14 @@
 source 'https://rubygems.org'
+
+# Default gems extracted from the Ruby stdlib in Ruby 3.4+/4.0.
+# Needed because jekyll-scholar -> citeproc-ruby still `require`s them.
+gem 'base64'
+gem 'bigdecimal'
+gem 'csv'
+gem 'logger'
+gem 'observer'
+gem 'ostruct'
+
 group :jekyll_plugins do
     gem 'classifier-reborn'
     gem 'jekyll'

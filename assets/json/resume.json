@@ -2,9 +2,11 @@
   "basics": {
     "name": "Honglin He",
     "image": "",
-    "email": "hollis71025@gmail.com"
+    "email": "hollis71025@gmail.com",
+    "url": "https://dhlinv.github.io/",
+    "summary": "PhD student at UCLA (Vision and Autonomy Intelligence Lab), advised by Bolei Zhou. Research on Embodied AI, Urban Simulation, and Robot Navigation."
   },
-  
+
 
   "education": [
     {
@@ -27,7 +29,7 @@
       "institution": "Xiamen University",
       "location": "Xiamen, Fujian",
       "area": "Automation",
-      "studyType": "Master [GPA: 3.5/4.0]",
+      "studyType": "Bachelor [GPA: 3.5/4.0]",
       "startDate": "2017-09-01",
       "endDate": "2021-07-01"
     }
@@ -54,6 +56,27 @@
       "startDate": "2024-05-01",
       "endDate": "2025-02-01",
       "highlights": ["MetaUrban", "IsaacUrban"]
+    }
+  ],
+
+  "awards": [
+    {
+      "title": "Amazon Trainium Fellowship",
+      "date": "2025",
+      "awarder": "Amazon",
+      "summary": ""
+    },
+    {
+      "title": "ICLR Spotlight — MetaUrban",
+      "date": "2025",
+      "awarder": "International Conference on Learning Representations",
+      "summary": "Spotlight presentation (top ~5% of submissions)."
+    },
+    {
+      "title": "CVPR Highlight — Towards Autonomous Micromobility through Scalable Urban Simulation",
+      "date": "2025",
+      "awarder": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "summary": "Highlight paper."
     }
   ]
 }

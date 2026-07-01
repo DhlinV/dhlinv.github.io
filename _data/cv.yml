@@ -2,96 +2,68 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Honglin He
+    - name: Affiliation
+      value: University of California, Los Angeles (VAIL)
+    - name: Email
+      value: hollis71025@gmail.com
     - name: Languages
-      value: English, German
+      value: Mandarin (native), English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. in Computer Science
+      institution: University of California, Los Angeles
+      year: 2024 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Advised by Prof. <a href="https://boleizhou.github.io/">Bolei Zhou</a> in the Vision and Autonomy Intelligence Lab (VAIL).
+        - Research on Embodied AI, Urban Simulation, and Robot Navigation.
+    - title: M.S. in Control Science and Engineering
+      institution: Department of Automation, Tsinghua University
+      year: 2021 - 2024
       description:
-        - Description 1.
-        - Description 2.
+        - Advised by Prof. Yi Zhang and Prof. <a href="https://www.fshuo.tech/">Shuo Feng</a>.
+        - Research on safety evaluation and scenario testing for autonomous vehicles.
+    - title: B.Eng. in Automation
+      institution: Department of Automation, Xiamen University
+      year: 2017 - 2021
 
-- title: Experience
-  type: time_table
+- title: Research Interests
+  type: nested_list
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Embodied AI & Robot Navigation
+      items:
+        - Learning-based navigation policies for autonomous micromobility.
+        - Scaling navigation foundation models with imitation and reinforcement learning.
+    - title: Urban Simulation
+      items:
+        - Building scalable simulation platforms for embodied urban agents.
+        - Controllable and generative world creation for sim-to-real navigation.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+        - Amazon Trainium Fellowship
+        - ICLR 2025 Spotlight — MetaUrban
+        - CVPR 2025 Highlight — Towards Autonomous Micromobility through Scalable Urban Simulation
 
-- title: Academic Interests
+- title: Selected Publications
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: 2026
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - From Seeing to Experiencing — ICLR 2026
+        - UrbanVerse — ICLR 2026
+        - AURA — CVPR 2026
+        - Learning Sidewalk Autopilot (MIMIC) — ICRA 2026
+    - title: 2025
       items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+        - MetaUrban — ICLR 2025 (Spotlight)
+        - Towards Autonomous Micromobility — CVPR 2025 (Highlight)
+    - title: 2023
+      items:
+        - OrthoPlanes — ICCV 2023
+        - DNA-Rendering — ICCV 2023

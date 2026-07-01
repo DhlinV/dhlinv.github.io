@@ -4,7 +4,18 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-3 abbr" style="max-width:28%;flex:0 0 28%;position:relative;">
       {% if entry.preview %}
-        {% if entry.preview contains '://' %}
+        {% assign preview_ext = entry.preview | split: '.' | last | downcase %}
+        {% assign video_exts = 'mp4,webm,mov,ogv' | split: ',' %}
+        {% if video_exts contains preview_ext %}
+          {% if entry.preview contains '://' %}
+            {% assign video_src = entry.preview %}
+          {% else %}
+            {% assign video_src = entry.preview | prepend: '/assets/img/publication_preview/' | relative_url %}
+          {% endif %}
+          <video class="preview z-depth-1 rounded" style="width:100%; height:auto;" autoplay loop muted playsinline>
+            <source src="{{ video_src }}" type="video/mp4">
+          </video>
+        {% elsif entry.preview contains '://' %}
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
@@ -18,8 +29,14 @@
             alt=entry.preview
           %}
         {% endif %}
-        {% if entry.flag %}
-          <span style="position:absolute; top:4px; left:4px; z-index:2; pointer-events:none; display:inline-block; padding:1px 7px; font-size:0.7rem; font-weight:600; color:white; background-color:var(--global-theme-color); border-radius:4px; opacity:0.92;">{{ entry.flag }}</span>
+        {% if entry.abbr %}
+          {% assign flag_abbr_lower = entry.abbr | downcase %}
+          {% if flag_abbr_lower contains 'highlight' or flag_abbr_lower contains 'spotlight' or flag_abbr_lower contains 'oral' %}
+            {% assign flag_bg = '#4caf50' %}
+          {% else %}
+            {% assign flag_bg = 'var(--global-theme-color)' %}
+          {% endif %}
+          <span style="position:absolute; top:4px; left:4px; z-index:2; pointer-events:none; display:inline-block; padding:1px 7px; font-size:0.7rem; font-weight:600; color:white; background-color:{{ flag_bg }}; border-radius:4px; opacity:0.92;">{{ entry.abbr }}</span>
         {% endif %}
       {% endif %}
     </div>

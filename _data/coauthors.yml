@@ -1,34 +1,49 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"zhou":
+  - firstname: ["Bolei", "B."]
+    url: https://boleizhou.github.io/
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"wu":
+  - firstname: ["Wayne", "W."]
+    url: https://wywu.github.io/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"ma":
+  - firstname: ["Yukai", "Y."]
+    url: https://yukai-ma.github.io/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"liu":
+  - firstname: ["Zhizheng", "Z."]
+    url: https://bosmallear.github.io/
+  - firstname: ["Mingxuan", "M."]
+    url: https://oatmealliu.github.io/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"he":
+  - firstname: ["Jack", "J."]
+    url: https://jackhe313.github.io/
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"mo":
+  - firstname: ["Sicheng", "S."]
+    url: https://sichengmo.github.io/
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"song":
+  - firstname: ["Selina"]
+    url: https://www.linkedin.com/in/selinasong/
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"li":
+  - firstname: ["Quanyi", "Q."]
+    url: https://quanyili.github.io/
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"feng":
+  - firstname: ["Shuo", "S."]
+    url: https://www.fshuo.tech/
+
+"zhang":
+  - firstname: ["Qihang", "Q."]
+    url: https://zqh0253.github.io/
+
+"duan":
+  - firstname: ["Chenda", "C."]
+    url: https://chendaduan.com/
+
+"wang":
+  - firstname: ["Weizhen", "W."]
+    url: https://weizhenwang-1210.github.io/
