@@ -11,6 +11,8 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
+<p class="author-note"><sup>*</sup> denotes equal contribution.</p>
+
 <div class="publications">
 
 {% bibliography %}

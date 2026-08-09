@@ -1,0 +1,286 @@
+%-------------------------------------------------------------------------------
+% Honglin He -- Academic CV
+% Single-column, pdflatex, standard packages only (compiles on Overleaf as-is).
+%
+% Layout: a fixed left gutter holds the "key" (date / venue), the right column
+% holds the content. Scanning down the left edge gives you the whole timeline
+% and every publication venue at a glance.
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+% Machine-readable / ATS-parsable output
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%---------------------------------------- colors
+\definecolor{accent}{HTML}{2C5F8A}   % section headings, links
+\definecolor{keycol}{HTML}{555555}   % left gutter text
+\definecolor{rulecol}{HTML}{BFBFBF}  % hairline under headings
+\definecolor{tagcol}{HTML}{9A6300}   % Spotlight / Highlight tags
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+%---------------------------------------- page furniture
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\footnotesize\color{keycol}Honglin He \quad\textbullet\quad \thepage}
+\raggedbottom
+\raggedright
+\setlength{\parindent}{0pt}
+
+%---------------------------------------- section headings
+\titleformat{\section}
+  {\normalfont\large\bfseries\scshape\color{accent}}{}{0em}{}
+  [\vspace{1pt}{\color{rulecol}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+%---------------------------------------- the two-column entry primitive
+\newlength{\gutter}\setlength{\gutter}{1.02in}
+\newlength{\gutgap}\setlength{\gutgap}{0.14in}
+\newlength{\bodycol}\setlength{\bodycol}{\textwidth-\gutter-\gutgap}
+
+% \entry{left key}{right content}
+% NOTE: the \strut must be issued at \normalsize BEFORE \small takes effect.
+% A \small strut shrinks the \vtop's height and drops the whole gutter column
+% about half a line below the body text.
+\newcommand{\entry}[2]{%
+  \par\vspace{3pt}%
+  \parbox[t]{\gutter}{\strut\small\color{keycol}\raggedright#1}%
+  \hspace{\gutgap}%
+  \parbox[t]{\bodycol}{\strut\raggedright#2}%
+  \par}
+
+%---------------------------------------- small helpers
+\newcommand{\me}{\textbf{Honglin He}}
+\newcommand{\tag}[1]{{\small\color{tagcol}(#1)}}
+\newcommand{\pglink}[1]{\href{#1}{\small project page}}
+\newcommand{\pplink}[1]{\href{#1}{\small paper}}
+
+% Advisor / supervisor homepages -- edit URLs here only
+\newcommand{\bolei}{\href{https://boleizhou.github.io/}{Bolei Zhou}}
+\newcommand{\yizhang}{\href{https://www.au.tsinghua.edu.cn/info/1076/3242.htm}{Yi Zhang}}
+\newcommand{\shuofeng}{\href{https://www.au.tsinghua.edu.cn/info/1076/3247.htm}{Shuo Feng}}
+\newcommand{\bodai}{\href{https://daibo.info/}{Bo Dai}}
+\newcommand{\waynewu}{\href{https://wywu.github.io/}{Wayne Wu}}
+\newcommand{\kylin}{\href{https://kwanyeelin.github.io/}{Kwan-Yee Lin}}
+
+% Bullets that hang under the body column but live OUTSIDE the parbox, so a long
+% experience entry can break across a page instead of jumping to the next one.
+\newenvironment{points}
+  {\begin{itemize}[leftmargin=\dimexpr\gutter+\gutgap+1.2em\relax,
+                   topsep=2pt,itemsep=1.5pt,parsep=0pt,label=\textendash]}
+  {\end{itemize}}
+
+%===============================================================================
+\begin{document}
+
+%---------------------------------------- header
+{\Huge Honglin He}\\[4pt]
+{\color{keycol}Ph.D. Student in Computer Science, University of California, Los Angeles}\\[2pt]
+{\color{keycol}Vision and Autonomy Intelligence Lab (VAIL) \quad\textbullet\quad Advisor: \bolei}\\[4pt]
+\href{mailto:honglin7@cs.ucla.edu}{honglin7@cs.ucla.edu} \quad\textbullet\quad
+\href{mailto:hollis71025@gmail.com}{hollis71025@gmail.com} \quad\textbullet\quad
+\href{https://dhlinv.github.io/}{dhlinv.github.io} \quad\textbullet\quad
+\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}
+
+\vspace{4pt}
+{\color{rulecol}\hrule height 0.8pt}
+
+%---------------------------------------- research statement
+\section{Research Interests}
+Embodied AI, urban simulation, and robot navigation --- building scalable simulation
+platforms and learning-based navigation policies for autonomous micromobility.
+
+%---------------------------------------- education
+\section{Education}
+
+\entry{Sep 2025 --\\Present}{%
+  \textbf{University of California, Los Angeles}\\
+  Ph.D. in Computer Science \quad\textbullet\quad GPA 4.0/4.0\\
+  Advisor: \bolei}
+
+\entry{Sep 2021 --\\Jul 2024}{%
+  \textbf{Tsinghua University}\\
+  M.S. in Control Science and Engineering \quad\textbullet\quad GPA 4.0/4.0, Rank 1/42\\
+  Advisors: \yizhang, \shuofeng}
+
+\entry{Sep 2017 --\\Jul 2021}{%
+  \textbf{Xiamen University}\\
+  B.E. in Automation \quad\textbullet\quad GPA 3.7/4.0}
+
+%---------------------------------------- publications
+\section{Publications}
+
+{\small\color{keycol}$^{*}$ denotes equal contribution. Full list on
+\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}.}
+
+\vspace{6pt}
+{\bfseries Preprints and Under Review}
+
+\entry{arXiv 2026}{%
+  \textbf{SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks}\\
+  Zhizheng Liu$^{*}$, \me$^{*}$, Vivek Alumootil$^{*}$, Akshat Pandya, Brad Squicciarini,
+  Wayne Wu, Bolei Zhou \quad \pglink{https://vail-ucla.github.io/SidewalkBench/}}
+
+\entry{arXiv 2026}{%
+  \textbf{Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D--3D Learning}\\
+  Yukai Ma, Joe Lin, Liu Liu, \me, Lulu Ricketts, Brad Squicciarini, Yong Liu, Bolei Zhou
+  \quad \pglink{https://vail-ucla.github.io/walkocc/}}
+
+\entry{arXiv 2026}{%
+  \textbf{From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon
+  Sidewalk Navigation}\\
+  \me, Zhizheng Liu, Yukai Ma, Bolei Zhou
+  \quad \pglink{https://vail-ucla.github.io/FlowPilot/}}
+
+\entry{arXiv 2025}{%
+  \textbf{Dreamland: Controllable World Creation with Simulator and Generative Models}\\
+  Sicheng Mo, Ziyang Leng, Leon Liu, Weizhen Wang, \me, Bolei Zhou
+  \quad \pglink{https://metadriverse.github.io/dreamland/}}
+
+\vspace{8pt}
+{\bfseries Conference Publications}
+
+\entry{CVPR 2026}{%
+  \textbf{AURA: Multi-modal Shared Autonomy for Urban Navigation}\\
+  Yukai Ma, \me, Selina Song, Wayne Wu, Bolei Zhou
+  \quad \pglink{https://vail-ucla.github.io/aura/}}
+
+\entry{ICRA 2026}{%
+  \textbf{Learning Sidewalk Autopilot from Multi-Scale Imitation with Corrective
+  Behavior Expansion}\\
+  \me, Yukai Ma, Brad Squicciarini, Wayne Wu, Bolei Zhou
+  \quad \pglink{https://vail-ucla.github.io/MIMIC/}}
+
+\entry{ICLR 2026}{%
+  \textbf{From Seeing to Experiencing: Scaling Navigation Foundation Models with
+  Reinforcement Learning}\\
+  \me$^{*}$, Yukai Ma$^{*}$, Brad Squicciarini, Wayne Wu, Bolei Zhou
+  \quad \pglink{https://metadriverse.github.io/s2e}}
+
+\entry{ICLR 2026}{%
+  \textbf{UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos}\\
+  Mingxuan Liu$^{*}$, \me$^{*}$, Elisa Ricci, Wayne Wu, Bolei Zhou
+  \quad \pglink{https://urbanverseproject.github.io/}}
+
+\entry{CVPR 2025}{%
+  \textbf{Towards Autonomous Micromobility through Scalable Urban Simulation}
+  \tag{Highlight}\\
+  \me$^{*}$, Wayne Wu$^{*}$, Todd Zhang, Jack He, Seth Zhao, Ran Gong, Quanyi Li, Bolei Zhou
+  \quad \pglink{https://metadriverse.github.io/urbansim/}}
+
+\entry{ICLR 2025}{%
+  \textbf{MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility}
+  \tag{Spotlight}\\
+  \me$^{*}$, Wayne Wu$^{*}$, Jack He, Yiran Wang, Chenda Duan, Zhizheng Liu, Quanyi Li, Bolei Zhou
+  \quad \pglink{https://metadriverse.github.io/metaurban/}}
+
+\entry{IV 2024}{%
+  \textbf{Few-Shot Scenario Testing for Autonomous Vehicles Based on Neighborhood
+  Coverage and Similarity}\\
+  Shu Li, Jingxuan Yang, \me, Yi Zhang, Jianming Hu, Shuo Feng
+  \quad \pplink{https://arxiv.org/abs/2402.01795}}
+
+\entry{CVPRW 2024}{%
+  \textbf{KnowMoformer: Knowledge-Conditioned Motion Transformer for Controllable
+  Traffic Scenario Simulation}\\
+  \me, Shu Li, Jingxuan Yang, Linxuan He, Yi Zhang, Qiujing Lu, Shuo Feng
+  \quad \pglink{https://agents4ad.github.io/}}
+
+\entry{ICCV 2023}{%
+  \textbf{OrthoPlanes: A Novel Representation for Better 3D-Awareness of GANs}\\
+  \me$^{*}$, Zhuoqian Yang$^{*}$, Shikai Li, Bo Dai, Wayne Wu
+  \quad \pglink{https://orthoplanes.github.io}}
+
+\entry{ICCV 2023}{%
+  \textbf{DNA-Rendering: A Diverse Neural Actor Repository for High-Fidelity
+  Human-centric Rendering}\\
+  Wei Cheng$^{*}$, Ruixiang Chen$^{*}$, Wanqi Yin$^{*}$, Siming Fan$^{*}$, Keyu Chen$^{*}$,
+  \me, Huiwen Luo, Zhongang Cai, Jingbo Wang, Yang Gao, et al.
+  \quad \pglink{https://dna-rendering.github.io/} \tag{\#2 contributor, as listed on the project page}}
+
+\entry{ITSC 2022}{%
+  \textbf{Adaptive Testing for Connected and Automated Vehicles with Sparse Control
+  Variates in Overtaking Scenarios}\\
+  Jingxuan Yang, \me, Yi Zhang, Shuo Feng, Henry X. Liu
+  \quad \pplink{https://ieeexplore.ieee.org/document/9922583}}
+
+\vspace{8pt}
+{\bfseries Journal Publications}
+
+\entry{IEEE T-ITS 2024}{%
+  \textbf{Few-Shot Testing of Autonomous Vehicles with Scenario Similarity Learning}\\
+  Shu Li, \me, Jingxuan Yang, Jianming Hu, Yi Zhang, Shuo Feng
+  \quad \pplink{https://arxiv.org/abs/2409.14369}}
+
+\entry{IEEE T-ITS 2023}{%
+  \textbf{Adaptive Safety Evaluation for Connected and Automated Vehicles with
+  Sparse Control Variates}\\
+  Jingxuan Yang, Haowei Sun, \me, Yi Zhang, Henry X. Liu, Shuo Feng
+  \quad \pplink{https://ieeexplore.ieee.org/document/10265755}}
+
+%---------------------------------------- experience
+\section{Research Experience}
+
+\entry{Sep 2025 --\\Present}{%
+  \textbf{University of California, Los Angeles} --- Ph.D. Student
+  \hfill{\small\color{keycol}Los Angeles, CA}\\
+  {\color{keycol}Advisor: \bolei}\\
+  Navigation foundation models, sidewalk autopilot, and scalable urban scene
+  generation.}
+
+\entry{Apr 2024 --\\May 2025}{%
+  \textbf{University of California, Los Angeles} --- Visiting Research Scholar
+  \hfill{\small\color{keycol}Los Angeles, CA}\\
+  {\color{keycol}Supervisor: \bolei}\\
+  Built MetaUrban and UrbanSim, simulation platforms for embodied AI and
+  autonomous micromobility.}
+
+\entry{Aug 2022 --\\Mar 2024}{%
+  \textbf{Shanghai AI Laboratory} --- Research Intern
+  \hfill{\small\color{keycol}Shanghai, China}\\
+  {\color{keycol}Supervisors: \bodai, \waynewu, \kylin}\\
+  3D-aware generative representations (OrthoPlanes) and the DNA-Rendering
+  human-centric dataset and benchmark.}
+
+\entry{Nov 2022 --\\May 2024}{%
+  \textbf{Intelligent Transportation Lab, Tsinghua University} --- Research Student
+  \hfill{\small\color{keycol}Beijing, China}\\
+  {\color{keycol}Supervisor: \shuofeng}\\
+  Naturalistic driving environment reconstruction and safety evaluation for
+  autonomous vehicles.}
+
+%---------------------------------------- awards
+\section{Awards and Honors}
+
+\entry{2025}{Amazon Trainium Fellowship}
+\entry{2025}{CVPR Highlight --- \textit{Towards Autonomous Micromobility through Scalable Urban Simulation}}
+\entry{2025}{ICLR Spotlight --- \textit{MetaUrban}}
+\entry{2020}{First Prize Scholarship for Academic Performance, Xiamen University}
+\entry{2019}{First Prize Scholarship for Academic Performance, Xiamen University}
+
+%---------------------------------------- skills
+\section{Skills}
+
+\entry{Programming}{C/C++, Python, Bash, \LaTeX}
+\entry{Frameworks}{PyTorch, Isaac Sim, Isaac Lab, Omniverse, TensorFlow, Git}
+\entry{Languages}{Mandarin (native), English}
+
+%---------------------------------------- optional: uncomment when ready
+% \section{Academic Service}
+% \entry{Reviewer}{IEEE T-ITS, IEEE TPAMI}
+% \entry{Teaching}{Teaching Assistant, Operations Research, Tsinghua University}
+
+\end{document}

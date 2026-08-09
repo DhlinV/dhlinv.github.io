@@ -34,11 +34,13 @@
 
 "feng":
   - firstname: ["Shuo", "S."]
-    url: https://www.fshuo.tech/
+    url: https://www.au.tsinghua.edu.cn/info/1076/3247.htm
 
 "zhang":
   - firstname: ["Qihang", "Q."]
     url: https://zqh0253.github.io/
+  - firstname: ["Yi", "Y."]
+    url: https://www.au.tsinghua.edu.cn/info/1076/3242.htm
 
 "duan":
   - firstname: ["Chenda", "C."]

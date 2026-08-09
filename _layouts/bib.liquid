@@ -38,6 +38,9 @@
           {% endif %}
           <span style="position:absolute; top:4px; left:4px; z-index:2; pointer-events:none; display:inline-block; padding:1px 7px; font-size:0.7rem; font-weight:600; color:white; background-color:{{ flag_bg }}; border-radius:4px; opacity:0.92;">{{ entry.abbr }}</span>
         {% endif %}
+        {% if entry.flag %}
+          <span style="position:absolute; top:4px; right:4px; z-index:2; pointer-events:none; display:inline-block; max-width:55%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:1px 7px; font-size:0.7rem; font-weight:600; color:white; background-color:var(--global-theme-color); border-radius:4px; opacity:0.92;">{{ entry.flag }}</span>
+        {% endif %}
       {% endif %}
     </div>
   {% endif %}
