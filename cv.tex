@@ -6,7 +6,10 @@
 % holds the content. Scanning down the left edge gives you the whole timeline
 % and every publication venue at a glance.
 %-------------------------------------------------------------------------------
-\documentclass[letterpaper,10.5pt]{article}
+% NOTE: article accepts 10/11/12pt only -- a "10.5pt" option is silently
+% dropped (LaTeX warns "Unused global option"). For a true 10.5pt, add
+% \usepackage[fontsize=10.5pt]{fontsize} -- but that spills the CV to 3 pages.
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,6 +21,7 @@
 \usepackage{calc}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{microtype}
 
 % Machine-readable / ATS-parsable output
 \input{glyphtounicode}
@@ -29,7 +33,12 @@
 \definecolor{rulecol}{HTML}{BFBFBF}  % hairline under headings
 \definecolor{tagcol}{HTML}{9A6300}   % Spotlight / Highlight tags
 
-\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\hypersetup{
+  colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Honglin He --- Curriculum Vitae},
+  pdfauthor={Honglin He},
+  pdfsubject={Academic CV},
+  pdfkeywords={Embodied AI, Urban Simulation, Robot Navigation, Autonomous Micromobility}}
 
 %---------------------------------------- page furniture
 \pagestyle{fancy}
@@ -38,6 +47,8 @@
 \fancyfoot[R]{\footnotesize\color{keycol}Honglin He \quad\textbullet\quad \thepage}
 \raggedbottom
 \raggedright
+\clubpenalty=10000
+\widowpenalty=10000
 \setlength{\parindent}{0pt}
 
 %---------------------------------------- section headings
@@ -64,9 +75,10 @@
 
 %---------------------------------------- small helpers
 \newcommand{\me}{\textbf{Honglin He}}
-\newcommand{\tag}[1]{{\small\color{tagcol}(#1)}}
+\newcommand{\pubtag}[1]{{\small\color{tagcol}(#1)}}
 \newcommand{\pglink}[1]{\href{#1}{\small project page}}
 \newcommand{\pplink}[1]{\href{#1}{\small paper}}
+\newcommand{\pubgroup}[1]{\par\vspace{8pt}{\bfseries #1}\par}
 
 % Advisor / supervisor homepages -- edit URLs here only
 \newcommand{\bolei}{\href{https://boleizhou.github.io/}{Bolei Zhou}}
@@ -101,24 +113,28 @@
 %---------------------------------------- research statement
 \section{Research Interests}
 Embodied AI, urban simulation, and robot navigation --- building scalable simulation
-platforms and learning-based navigation policies for autonomous micromobility.
+platforms and learning-based navigation policies that help robots move safely through
+the sidewalks and public spaces people share every day.
 
 %---------------------------------------- education
 \section{Education}
 
 \entry{Sep 2025 --\\Present}{%
-  \textbf{University of California, Los Angeles}\\
-  Ph.D. in Computer Science \quad\textbullet\quad GPA 4.0/4.0\\
+  \textbf{University of California, Los Angeles (UCLA)}\\
+  Ph.D. in Computer Science\\
+  GPA 4.0/4.0\\
   Advisor: \bolei}
 
 \entry{Sep 2021 --\\Jul 2024}{%
-  \textbf{Tsinghua University}\\
-  M.S. in Control Science and Engineering \quad\textbullet\quad GPA 4.0/4.0, Rank 1/42\\
+  \textbf{Tsinghua University (THU)}\\
+  M.S. in Control Science and Engineering\\
+  GPA 4.0/4.0, Rank 1/42\\
   Advisors: \yizhang, \shuofeng}
 
 \entry{Sep 2017 --\\Jul 2021}{%
-  \textbf{Xiamen University}\\
-  B.E. in Automation \quad\textbullet\quad GPA 3.7/4.0}
+  \textbf{Xiamen University (XMU)}\\
+  B.E. in Automation\\
+  GPA 3.7/4.0}
 
 %---------------------------------------- publications
 \section{Publications}
@@ -126,8 +142,7 @@ platforms and learning-based navigation policies for autonomous micromobility.
 {\small\color{keycol}$^{*}$ denotes equal contribution. Full list on
 \href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}.}
 
-\vspace{6pt}
-{\bfseries Preprints and Under Review}
+\pubgroup{Preprints and Under Review}
 
 \entry{arXiv 2026}{%
   \textbf{SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks}\\
@@ -150,8 +165,7 @@ platforms and learning-based navigation policies for autonomous micromobility.
   Sicheng Mo, Ziyang Leng, Leon Liu, Weizhen Wang, \me, Bolei Zhou
   \quad \pglink{https://metadriverse.github.io/dreamland/}}
 
-\vspace{8pt}
-{\bfseries Conference Publications}
+\pubgroup{Conference Publications}
 
 \entry{CVPR 2026}{%
   \textbf{AURA: Multi-modal Shared Autonomy for Urban Navigation}\\
@@ -177,13 +191,13 @@ platforms and learning-based navigation policies for autonomous micromobility.
 
 \entry{CVPR 2025}{%
   \textbf{Towards Autonomous Micromobility through Scalable Urban Simulation}
-  \tag{Highlight}\\
+  \pubtag{Highlight}\\
   \me$^{*}$, Wayne Wu$^{*}$, Todd Zhang, Jack He, Seth Zhao, Ran Gong, Quanyi Li, Bolei Zhou
   \quad \pglink{https://metadriverse.github.io/urbansim/}}
 
 \entry{ICLR 2025}{%
   \textbf{MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility}
-  \tag{Spotlight}\\
+  \pubtag{Spotlight}\\
   \me$^{*}$, Wayne Wu$^{*}$, Jack He, Yiran Wang, Chenda Duan, Zhizheng Liu, Quanyi Li, Bolei Zhou
   \quad \pglink{https://metadriverse.github.io/metaurban/}}
 
@@ -209,7 +223,7 @@ platforms and learning-based navigation policies for autonomous micromobility.
   Human-centric Rendering}\\
   Wei Cheng$^{*}$, Ruixiang Chen$^{*}$, Wanqi Yin$^{*}$, Siming Fan$^{*}$, Keyu Chen$^{*}$,
   \me, Huiwen Luo, Zhongang Cai, Jingbo Wang, Yang Gao, et al.
-  \quad \pglink{https://dna-rendering.github.io/} \tag{\#2 contributor, as listed on the project page}}
+  \quad \pglink{https://dna-rendering.github.io/} \pubtag{\#2 contributor, as listed on the project page}}
 
 \entry{ITSC 2022}{%
   \textbf{Adaptive Testing for Connected and Automated Vehicles with Sparse Control
@@ -217,15 +231,14 @@ platforms and learning-based navigation policies for autonomous micromobility.
   Jingxuan Yang, \me, Yi Zhang, Shuo Feng, Henry X. Liu
   \quad \pplink{https://ieeexplore.ieee.org/document/9922583}}
 
-\vspace{8pt}
-{\bfseries Journal Publications}
+\pubgroup{Journal Publications}
 
-\entry{IEEE T-ITS 2024}{%
+\entry{T-ITS 2024}{%
   \textbf{Few-Shot Testing of Autonomous Vehicles with Scenario Similarity Learning}\\
   Shu Li, \me, Jingxuan Yang, Jianming Hu, Yi Zhang, Shuo Feng
   \quad \pplink{https://arxiv.org/abs/2409.14369}}
 
-\entry{IEEE T-ITS 2023}{%
+\entry{T-ITS 2023}{%
   \textbf{Adaptive Safety Evaluation for Connected and Automated Vehicles with
   Sparse Control Variates}\\
   Jingxuan Yang, Haowei Sun, \me, Yi Zhang, Henry X. Liu, Shuo Feng
@@ -235,52 +248,48 @@ platforms and learning-based navigation policies for autonomous micromobility.
 \section{Research Experience}
 
 \entry{Sep 2025 --\\Present}{%
-  \textbf{University of California, Los Angeles} --- Ph.D. Student
+  \textbf{University of California, Los Angeles}
   \hfill{\small\color{keycol}Los Angeles, CA}\\
+  Ph.D. Student\\
   {\color{keycol}Advisor: \bolei}\\
   Navigation foundation models, sidewalk autopilot, and scalable urban scene
   generation.}
 
 \entry{Apr 2024 --\\May 2025}{%
-  \textbf{University of California, Los Angeles} --- Visiting Research Scholar
+  \textbf{University of California, Los Angeles}
   \hfill{\small\color{keycol}Los Angeles, CA}\\
+  Visiting Research Scholar\\
   {\color{keycol}Supervisor: \bolei}\\
-  Built MetaUrban and UrbanSim, simulation platforms for embodied AI and
-  autonomous micromobility.}
-
-\entry{Aug 2022 --\\Mar 2024}{%
-  \textbf{Shanghai AI Laboratory} --- Research Intern
-  \hfill{\small\color{keycol}Shanghai, China}\\
-  {\color{keycol}Supervisors: \bodai, \waynewu, \kylin}\\
-  3D-aware generative representations (OrthoPlanes) and the DNA-Rendering
-  human-centric dataset and benchmark.}
+  Simulation platforms for embodied AI and autonomous micromobility.}
 
 \entry{Nov 2022 --\\May 2024}{%
-  \textbf{Intelligent Transportation Lab, Tsinghua University} --- Research Student
+  \textbf{Intelligent Transportation Lab, Tsinghua University}
   \hfill{\small\color{keycol}Beijing, China}\\
+  Research Student\\
   {\color{keycol}Supervisor: \shuofeng}\\
   Naturalistic driving environment reconstruction and safety evaluation for
   autonomous vehicles.}
+
+\entry{Aug 2022 --\\Mar 2024}{%
+  \textbf{Shanghai AI Laboratory}
+  \hfill{\small\color{keycol}Shanghai, China}\\
+  Research Intern\\
+  {\color{keycol}Supervisors: \bodai, \waynewu, \kylin}\\
+  3D-aware generative representations and a human-centric dataset and
+  benchmark.}
 
 %---------------------------------------- awards
 \section{Awards and Honors}
 
 \entry{2025}{Amazon Trainium Fellowship}
-\entry{2025}{CVPR Highlight --- \textit{Towards Autonomous Micromobility through Scalable Urban Simulation}}
-\entry{2025}{ICLR Spotlight --- \textit{MetaUrban}}
-\entry{2020}{First Prize Scholarship for Academic Performance, Xiamen University}
-\entry{2019}{First Prize Scholarship for Academic Performance, Xiamen University}
+\entry{2019, 2020}{First Prize Scholarship for Academic Performance, Xiamen University}
 
-%---------------------------------------- skills
-\section{Skills}
+%---------------------------------------- academic service
+\section{Academic Service}
 
-\entry{Programming}{C/C++, Python, Bash, \LaTeX}
-\entry{Frameworks}{PyTorch, Isaac Sim, Isaac Lab, Omniverse, TensorFlow, Git}
-\entry{Languages}{Mandarin (native), English}
+\entry{Reviewer}{CVPR, ICCV, ECCV, NeurIPS, ICLR, CoRL, AAAI, ICRA, IEEE TPAMI, IEEE T-ITS}
 
 %---------------------------------------- optional: uncomment when ready
-% \section{Academic Service}
-% \entry{Reviewer}{IEEE T-ITS, IEEE TPAMI}
 % \entry{Teaching}{Teaching Assistant, Operations Research, Tsinghua University}
 
 \end{document}

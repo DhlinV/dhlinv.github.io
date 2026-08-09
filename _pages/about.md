@@ -18,4 +18,4 @@ I am a second-year PhD student at the Department of Computer Science, University
 
 I obtained my Master (2021.09 - 2024.06) at the Department of Automation, Tsinghua University, advised by <a href="https://www.au.tsinghua.edu.cn/info/1076/3242.htm">Yi Zhang</a> and <a href="https://www.au.tsinghua.edu.cn/info/1076/3247.htm">Shuo Feng</a>. Before that, I received my B.Eng (2017.09 - 2021.06) at the Department of Automation, Xiamen University.
 
-My research focuses on <strong>Embodied AI</strong>, <strong>Urban Simulation</strong>, and <strong>Robot Navigation</strong>, with emphasis on building scalable simulation platforms and learning-based navigation policies for autonomous micromobility.
+My research lies at the intersection of <strong>Embodied AI</strong>, <strong>Urban Simulation</strong>, and <strong>Robot Navigation</strong>. I build scalable simulation platforms and learning-based navigation policies that help robots move safely through the sidewalks and public spaces people share every day.
