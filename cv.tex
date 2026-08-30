@@ -55,7 +55,7 @@
 \titleformat{\section}
   {\normalfont\large\bfseries\scshape\color{accent}}{}{0em}{}
   [\vspace{1pt}{\color{rulecol}\titlerule[0.6pt]}]
-\titlespacing*{\section}{0pt}{10pt}{5pt}
+\titlespacing*{\section}{0pt}{7pt}{3pt}
 
 %---------------------------------------- the two-column entry primitive
 \newlength{\gutter}\setlength{\gutter}{1.02in}
@@ -67,7 +67,7 @@
 % A \small strut shrinks the \vtop's height and drops the whole gutter column
 % about half a line below the body text.
 \newcommand{\entry}[2]{%
-  \par\vspace{3pt}%
+  \par\vspace{2pt}%
   \parbox[t]{\gutter}{\strut\small\color{keycol}\raggedright#1}%
   \hspace{\gutgap}%
   \parbox[t]{\bodycol}{\strut\raggedright#2}%
@@ -78,7 +78,7 @@
 \newcommand{\pubtag}[1]{{\small\color{tagcol}(#1)}}
 \newcommand{\pglink}[1]{\href{#1}{\small project page}}
 \newcommand{\pplink}[1]{\href{#1}{\small paper}}
-\newcommand{\pubgroup}[1]{\par\vspace{8pt}{\bfseries #1}\par}
+\newcommand{\pubgroup}[1]{\par\vspace{5pt}{\bfseries #1}\par}
 
 % Advisor / supervisor homepages -- edit URLs here only
 \newcommand{\bolei}{\href{https://boleizhou.github.io/}{Bolei Zhou}}
@@ -160,6 +160,18 @@ the sidewalks and public spaces people share every day.
   \me, Zhizheng Liu, Yukai Ma, Bolei Zhou
   \quad \pglink{https://vail-ucla.github.io/FlowPilot/}}
 
+\entry{arXiv 2026}{%
+  \textbf{Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation}\\
+  Zhenghao Peng, \me, Quanyi Li, Yukai Ma, Bolei Zhou
+  \quad \pplink{https://arxiv.org/abs/2606.20458}}
+
+\entry{arXiv 2026}{%
+  \textbf{BridgeSim: Unveiling the OL--CL Gap in End-to-End Autonomous Driving}\\
+  Seth Z. Zhao, Luobin Wang, Hongwei Ruan, Yuxin Bao, Yilan Chen, Ziyang Leng,
+  Abhijit Ravichandran, \me, Zewei Zhou, Xu Han, Abhishek Peri, Zhiyu Huang,
+  Pranav Desai, Henrik Christensen, Jiaqi Ma, Bolei Zhou
+  \quad \pglink{https://vail-ucla.github.io/BridgeSim/}}
+
 \entry{arXiv 2025}{%
   \textbf{Dreamland: Controllable World Creation with Simulator and Generative Models}\\
   Sicheng Mo, Ziyang Leng, Leon Liu, Weizhen Wang, \me, Bolei Zhou
@@ -222,7 +234,9 @@ the sidewalks and public spaces people share every day.
   \textbf{DNA-Rendering: A Diverse Neural Actor Repository for High-Fidelity
   Human-centric Rendering}\\
   Wei Cheng$^{*}$, Ruixiang Chen$^{*}$, Wanqi Yin$^{*}$, Siming Fan$^{*}$, Keyu Chen$^{*}$,
-  \me, Huiwen Luo, Zhongang Cai, Jingbo Wang, Yang Gao, et al.
+  \me, Huiwen Luo, Zhongang Cai, Jingbo Wang, Yang Gao, Zhengming Yu, Zhengyu Lin,
+  Daxuan Ren, Lei Yang, Ziwei Liu, Chen Change Loy, Chen Qian, Wayne Wu, Dahua Lin,
+  Bo Dai, Kwan-Yee Lin
   \quad \pglink{https://dna-rendering.github.io/} \pubtag{\#2 contributor, as listed on the project page}}
 
 \entry{ITSC 2022}{%
