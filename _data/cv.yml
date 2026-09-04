@@ -59,6 +59,9 @@
         - UrbanVerse — ICLR 2026
         - AURA — CVPR 2026
         - Learning Sidewalk Autopilot (MIMIC) — ICRA 2026
+        - FlowPilot — CoRL 2026
+        - SidewalkBench — CoRL 2026
+        - BridgeSim — CoRL 2026
     - title: 2025
       items:
         - MetaUrban — ICLR 2025 (Spotlight)
