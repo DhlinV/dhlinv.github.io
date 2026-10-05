@@ -44,6 +44,9 @@
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2026
+      items:
+        - CoRL 2026 Spotlight — SidewalkBench
     - year: 2025
       items:
         - Amazon Trainium Fellowship
@@ -60,7 +63,7 @@
         - AURA — CVPR 2026
         - Learning Sidewalk Autopilot (MIMIC) — ICRA 2026
         - FlowPilot — CoRL 2026
-        - SidewalkBench — CoRL 2026
+        - SidewalkBench — CoRL 2026 (Spotlight)
         - BridgeSim — CoRL 2026
     - title: 2025
       items:
