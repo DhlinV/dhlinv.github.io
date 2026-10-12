@@ -76,8 +76,10 @@
 %---------------------------------------- small helpers
 \newcommand{\me}{\textbf{Honglin He}}
 \newcommand{\pubtag}[1]{{\small\color{tagcol}(#1)}}
-\newcommand{\pglink}[1]{\href{#1}{\small project page}}
-\newcommand{\pplink}[1]{\href{#1}{\small paper}}
+% Short link labels kept on one line: \links{\href{..}{Paper} | \href{..}{Project}}
+\newcommand{\links}[1]{\mbox{\small #1}}
+% Unfilled facts render in red so they can't slip into a submitted PDF
+\newcommand{\todo}[1]{{\color{red}[TODO: #1]}}
 \newcommand{\pubgroup}[1]{\par\vspace{5pt}{\bfseries #1}\par}
 
 % Advisor / supervisor homepages -- edit URLs here only
@@ -102,23 +104,21 @@
 {\Huge Honglin He}\\[4pt]
 {\color{keycol}Ph.D. Student in Computer Science, University of California, Los Angeles}\\[2pt]
 {\color{keycol}Vision and Autonomy Intelligence Lab (VAIL) \quad\textbullet\quad Advisor: Prof.~\bolei}\\[4pt]
-\href{mailto:honglin7@cs.ucla.edu}{honglin7@cs.ucla.edu} \quad\textbullet\quad
-\href{mailto:hollis71025@gmail.com}{hollis71025@gmail.com}
-\quad\textbullet\quad \href{tel:+12136629038}{+1 (213) 662-9038}
-\\[2pt]
+\href{mailto:hollis71025@gmail.com}{hollis71025@gmail.com} \quad\textbullet\quad
+\href{tel:+12136629038}{+1 (213) 662-9038} \quad\textbullet\quad
 \href{https://dhlinv.github.io/}{dhlinv.github.io} \quad\textbullet\quad
-\href{https://github.com/DhlinV}{github.com/DhlinV} \quad\textbullet\quad
-\href{https://www.linkedin.com/in/honglin-he-890474328/}{linkedin.com/in/honglin-he-890474328} \quad\textbullet\quad
-\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}
+\href{https://github.com/DhlinV}{GitHub} \quad\textbullet\quad
+\href{https://www.linkedin.com/in/honglin-he-890474328/}{LinkedIn} \quad\textbullet\quad
+\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Scholar}
 
 \vspace{4pt}
 {\color{rulecol}\hrule height 0.8pt}
 
 %---------------------------------------- research statement
 \section{Research Interests}
-Embodied AI, urban simulation, and robot navigation --- building scalable simulation
-platforms and learning-based navigation policies that help robots move safely through
-the sidewalks and public spaces people share every day.
+Embodied AI for urban mobility: scalable simulation, navigation foundation models, and
+sim-to-real learning that let sidewalk robots navigate safely, robustly, and socially among
+pedestrians in real cities.
 
 %---------------------------------------- education
 \section{Education}
@@ -129,173 +129,188 @@ the sidewalks and public spaces people share every day.
   GPA 4.0/4.0\\
   Advisor: Prof.~\bolei}
 
-\entry{Sep 2021 --\\Jul 2024}{%
+\entry{Sep 2021 --\\Jun 2024}{%
   \textbf{Tsinghua University (THU)}\\
   M.S. in Control Science and Engineering\\
   GPA 4.0/4.0, Rank 1/42\\
   Advisors: Prof.~\yizhang, Prof.~\shuofeng}
 
-\entry{Sep 2017 --\\Jul 2021}{%
+\entry{Sep 2017 --\\Jun 2021}{%
   \textbf{Xiamen University (XMU)}\\
   B.E. in Automation\\
   GPA 3.7/4.0}
 
-%---------------------------------------- publications
-\section{Publications}
-
-{\small\color{keycol}$^{*}$ denotes equal contribution. Full list on
-\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}.}
-
-\pubgroup{Preprints and Under Review}
-
-\entry{arXiv 2026}{%
-  \textbf{Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D--3D Learning}\\
-  Yukai Ma, Joe Lin, Liu Liu, \me, Lulu Ricketts, Brad Squicciarini, Yong Liu, Bolei Zhou
-  \quad \pglink{https://vail-ucla.github.io/walkocc/}}
-
-\entry{arXiv 2026}{%
-  \textbf{Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation}\\
-  Zhenghao Peng, \me, Quanyi Li, Yukai Ma, Bolei Zhou
-  \quad \pplink{https://arxiv.org/abs/2606.20458}}
-
-\entry{arXiv 2025}{%
-  \textbf{Dreamland: Controllable World Creation with Simulator and Generative Models}\\
-  Sicheng Mo, Ziyang Leng, Leon Liu, Weizhen Wang, \me, Bolei Zhou
-  \quad \pglink{https://metadriverse.github.io/dreamland/}}
-
-\pubgroup{Conference Publications}
-
-\entry{CoRL 2026}{%
-  \textbf{SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks}
-  \pubtag{Spotlight}\\
-  Zhizheng Liu$^{*}$, \me$^{*}$, Vivek Alumootil$^{*}$, Akshat Pandya, Brad Squicciarini,
-  Wayne Wu, Bolei Zhou \quad \pglink{https://vail-ucla.github.io/SidewalkBench/}}
-
-\entry{CoRL 2026}{%
-  \textbf{From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon
-  Sidewalk Navigation}\\
-  \me, Zhizheng Liu, Yukai Ma, Bolei Zhou
-  \quad \pglink{https://vail-ucla.github.io/FlowPilot/}}
-
-\entry{CoRL 2026}{%
-  \textbf{BridgeSim: Unveiling the OL--CL Gap in End-to-End Autonomous Driving}\\
-  Seth Z. Zhao, Luobin Wang, Hongwei Ruan, Yuxin Bao, Yilan Chen, Ziyang Leng,
-  Abhijit Ravichandran, \me, Zewei Zhou, Xu Han, Abhishek Peri, Zhiyu Huang,
-  Pranav Desai, Henrik Christensen, Jiaqi Ma, Bolei Zhou
-  \quad \pglink{https://vail-ucla.github.io/BridgeSim/}}
-
-\entry{CVPR 2026}{%
-  \textbf{AURA: Multi-modal Shared Autonomy for Urban Navigation}\\
-  Yukai Ma, \me, Selina Song, Wayne Wu, Bolei Zhou
-  \quad \pglink{https://vail-ucla.github.io/aura/}}
-
-\entry{ICRA 2026}{%
-  \textbf{Learning Sidewalk Autopilot from Multi-Scale Imitation with Corrective
-  Behavior Expansion}\\
-  \me, Yukai Ma, Brad Squicciarini, Wayne Wu, Bolei Zhou
-  \quad \pglink{https://vail-ucla.github.io/MIMIC/}}
-
-\entry{ICLR 2026}{%
-  \textbf{From Seeing to Experiencing: Scaling Navigation Foundation Models with
-  Reinforcement Learning}\\
-  \me$^{*}$, Yukai Ma$^{*}$, Brad Squicciarini, Wayne Wu, Bolei Zhou
-  \quad \pglink{https://metadriverse.github.io/s2e}}
-
-\entry{ICLR 2026}{%
-  \textbf{UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos}\\
-  Mingxuan Liu$^{*}$, \me$^{*}$, Elisa Ricci, Wayne Wu, Bolei Zhou
-  \quad \pglink{https://urbanverseproject.github.io/}}
-
-\entry{CVPR 2025}{%
-  \textbf{Towards Autonomous Micromobility through Scalable Urban Simulation}
-  \pubtag{Highlight}\\
-  \me$^{*}$, Wayne Wu$^{*}$, Todd Zhang, Jack He, Seth Zhao, Ran Gong, Quanyi Li, Bolei Zhou
-  \quad \pglink{https://metadriverse.github.io/urbansim/}}
-
-\entry{ICLR 2025}{%
-  \textbf{MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility}
-  \pubtag{Spotlight}\\
-  \me$^{*}$, Wayne Wu$^{*}$, Jack He, Yiran Wang, Chenda Duan, Zhizheng Liu, Quanyi Li, Bolei Zhou
-  \quad \pglink{https://metadriverse.github.io/metaurban/}}
-
-\entry{IV 2024}{%
-  \textbf{Few-Shot Scenario Testing for Autonomous Vehicles Based on Neighborhood
-  Coverage and Similarity}\\
-  Shu Li, Jingxuan Yang, \me, Yi Zhang, Jianming Hu, Shuo Feng
-  \quad \pplink{https://arxiv.org/abs/2402.01795}}
-
-\entry{CVPRW 2024}{%
-  \textbf{KnowMoformer: Knowledge-Conditioned Motion Transformer for Controllable
-  Traffic Scenario Simulation}\\
-  \me, Shu Li, Jingxuan Yang, Linxuan He, Yi Zhang, Qiujing Lu, Shuo Feng
-  \quad \pglink{https://agents4ad.github.io/}}
-
-\entry{ICCV 2023}{%
-  \textbf{OrthoPlanes: A Novel Representation for Better 3D-Awareness of GANs}\\
-  \me$^{*}$, Zhuoqian Yang$^{*}$, Shikai Li, Bo Dai, Wayne Wu
-  \quad \pglink{https://orthoplanes.github.io}}
-
-\entry{ICCV 2023}{%
-  \textbf{DNA-Rendering: A Diverse Neural Actor Repository for High-Fidelity
-  Human-centric Rendering}\\
-  Wei Cheng$^{*}$, Ruixiang Chen$^{*}$, Wanqi Yin$^{*}$, Siming Fan$^{*}$, Keyu Chen$^{*}$,
-  \me, Huiwen Luo, Zhongang Cai, Jingbo Wang, Yang Gao, Zhengming Yu, Zhengyu Lin,
-  Daxuan Ren, Lei Yang, Ziwei Liu, Chen Change Loy, Chen Qian, Wayne Wu, Dahua Lin,
-  Bo Dai, Kwan-Yee Lin
-  \quad \pglink{https://dna-rendering.github.io/} \pubtag{\#2 contributor, as listed on the project page}}
-
-\entry{ITSC 2022}{%
-  \textbf{Adaptive Testing for Connected and Automated Vehicles with Sparse Control
-  Variates in Overtaking Scenarios}\\
-  Jingxuan Yang, \me, Yi Zhang, Shuo Feng, Henry X. Liu
-  \quad \pplink{https://ieeexplore.ieee.org/document/9922583}}
-
-\pubgroup{Journal Publications}
-
-\entry{T-ITS 2024}{%
-  \textbf{Few-Shot Testing of Autonomous Vehicles with Scenario Similarity Learning}\\
-  Shu Li, \me, Jingxuan Yang, Jianming Hu, Yi Zhang, Shuo Feng
-  \quad \pplink{https://arxiv.org/abs/2409.14369}}
-
-\entry{T-ITS 2023}{%
-  \textbf{Adaptive Safety Evaluation for Connected and Automated Vehicles with
-  Sparse Control Variates}\\
-  Jingxuan Yang, Haowei Sun, \me, Yi Zhang, Henry X. Liu, Shuo Feng
-  \quad \pplink{https://ieeexplore.ieee.org/document/10265755}}
-
 %---------------------------------------- experience
+% Each bullet: action + concrete work + result. Keep "validated in experiments"
+% and "deployed on the fleet" distinct -- only claim fleet deployment if true.
 \section{Research Experience}
 
 \entry{Sep 2025 --\\Present}{%
   \textbf{University of California, Los Angeles}
   \hfill{\small\color{keycol}Los Angeles, CA}\\
-  Ph.D. Student\\
-  {\color{keycol}Advisor: Prof.~\bolei}\\
-  Navigation foundation models, sidewalk autopilot, and scalable urban scene
-  generation.}
+  Ph.D. Student \quad{\color{keycol}Advisor: Prof.~\bolei}\\
+  Research collaboration with Coco Robotics on sidewalk delivery robots}
+\begin{points}
+  \item \textbf{Simulation:} Co-led SidewalkBench (CoRL 2026 Spotlight; 100 2\,km\,$\times$\,2\,km scenes,
+    1{,}235 scenarios, 9 models) and UrbanVerse (ICLR 2026; city-tour videos to simulation).
+  \item \textbf{Robot learning:} Led FlowPilot (CoRL 2026; flow matching + human-preference
+    alignment), MIMIC (ICRA 2026; multi-scale imitation + corrective behavior expansion),
+    and S2E (ICLR 2026; RL fine-tuning of navigation foundation models in simulation).
+  \item \textbf{Real-world robots:} Validated these policies on Coco Robotics delivery robots
+    over 20+\,km with only a monocular camera and coarse GPS, day and night: 3.4 interventions
+    per 100\,m, longest intervention-free run 1.6\,km; FlowPilot cut interventions by 40.0\%.
+\end{points}
+
+\entry{Jun 2026 --\\Sep 2026}{%
+  \textbf{Coco Robotics}
+  \hfill{\small\color{keycol}Los Angeles, CA}\\
+  Machine Learning Engineer Intern}
+\begin{points}
+  \item \textbf{(1:1) One pilot, one robot:} Improved the driving model with fleet-scale training,
+    raising Gaussian-splatting (GS) benchmark success from 53.8\% to 91.3\%.
+  \item \textbf{(1:N) One pilot, many robots:} Added a scenario-understanding layer and human-signal
+    interface; robots stop before crosswalks and wait for the pilot's approval to cross.
+\end{points}
 
 \entry{Apr 2024 --\\May 2025}{%
   \textbf{University of California, Los Angeles}
   \hfill{\small\color{keycol}Los Angeles, CA}\\
-  Visiting Research Scholar\\
-  {\color{keycol}Supervisor: Prof.~\bolei}\\
-  Simulation platforms for embodied AI and autonomous micromobility.}
+  Visiting Research Scholar \quad{\color{keycol}Supervisor: Prof.~\bolei \quad Collaborator: Dr.~\waynewu}}
+\begin{points}
+  \item Co-led URBAN-SIM (CVPR 2025 Highlight), a GPU-parallel platform running 2{,}600 FPS on
+    one GPU; scaling from 1 to 1{,}024 training scenes raised success from 5.1\% to 83.2\%.
+  \item Co-led MetaUrban (ICLR 2025 Spotlight), a compositional simulator for urban micromobility.
+\end{points}
 
 \entry{Nov 2022 --\\May 2024}{%
   \textbf{Intelligent Transportation Lab, Tsinghua University}
   \hfill{\small\color{keycol}Beijing, China}\\
-  Research Student\\
-  {\color{keycol}Supervisor: Prof.~\shuofeng}\\
+  Research Student \quad{\color{keycol}Supervisor: Prof.~\shuofeng}\\
   Naturalistic driving environment reconstruction and safety evaluation for
   autonomous vehicles.}
 
 \entry{Aug 2022 --\\Mar 2024}{%
   \textbf{Shanghai AI Laboratory}
   \hfill{\small\color{keycol}Shanghai, China}\\
-  Research Intern\\
-  {\color{keycol}Supervisors: \bodai, \waynewu, \kylin}\\
-  3D-aware generative representations and a human-centric dataset and
-  benchmark.}
+  Research Intern \quad{\color{keycol}Supervisors: \bodai, \waynewu, \kylin}}
+\begin{points}
+  \item Led OrthoPlanes (ICCV 2023), a representation that improves the 3D-awareness
+    of GANs.
+  \item Contributed to DNA-Rendering (ICCV 2023), a 500-actor, 60-camera human rendering
+    dataset and benchmark: built the annotation and refinement pipeline and trained the
+    NeuralBody and AnimatableNeRF baselines.
+\end{points}
+
+%---------------------------------------- publications
+\section{Selected Publications}
+
+{\small\color{keycol}$^{*}$ denotes equal contribution. Full list on
+\href{https://scholar.google.cz/citations?user=Y0Qrwg0AAAAJ&hl=zh-CN}{Google Scholar}.}
+
+\entry{CoRL 2026}{%
+  \textbf{SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks}
+  \pubtag{Spotlight}\\
+  Zhizheng Liu$^{*}$, \me$^{*}$, Vivek Alumootil$^{*}$, Akshat Pandya, Brad Squicciarini,
+  Wayne Wu, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2606.16953}{Paper} | \href{https://vail-ucla.github.io/SidewalkBench/}{Project}}}
+
+\entry{CoRL 2026}{%
+  \textbf{From Imitation to Alignment: Human-Preference Flow Policies for Long-Horizon
+  Sidewalk Navigation}\\
+  \me, Zhizheng Liu, Yukai Ma, Bolei Zhou
+  \quad \links{\href{https://vail-ucla.github.io/assets/projects/flowpilot/paper.pdf}{Paper} | \href{https://vail-ucla.github.io/FlowPilot/}{Project} | \href{https://github.com/VAIL-UCLA/FlowPilot}{Code}}}
+
+\entry{ICLR 2026}{%
+  \textbf{From Seeing to Experiencing: Scaling Navigation Foundation Models with
+  Reinforcement Learning}\\
+  \me$^{*}$, Yukai Ma$^{*}$, Brad Squicciarini, Wayne Wu, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2507.22028}{Paper} | \href{https://metadriverse.github.io/s2e}{Project} | \href{https://github.com/VAIL-UCLA/S2E}{Code}}}
+
+\entry{ICLR 2026}{%
+  \textbf{UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos}\\
+  Mingxuan Liu$^{*}$, \me$^{*}$, Elisa Ricci, Wayne Wu, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2510.15018}{Paper} | \href{https://urbanverseproject.github.io/}{Project} | \href{https://github.com/VAIL-UCLA/UrbanVerse}{Code}}}
+
+\entry{ICRA 2026}{%
+  \textbf{Learning Sidewalk Autopilot from Multi-Scale Imitation with Corrective
+  Behavior Expansion}\\
+  \me, Yukai Ma, Brad Squicciarini, Wayne Wu, Bolei Zhou
+  \quad \links{\href{https://vail-ucla.github.io/assets/projects/mimic/paper.pdf}{Paper} | \href{https://vail-ucla.github.io/MIMIC/}{Project} | \href{https://github.com/VAIL-UCLA/MIMIC}{Code}}}
+
+\entry{CVPR 2025}{%
+  \textbf{Towards Autonomous Micromobility through Scalable Urban Simulation}
+  \pubtag{Highlight}\\
+  Wayne Wu$^{*}$, \me$^{*}$, Chaoyuan Zhang, Jack He, Seth Z. Zhao, Ran Gong, Quanyi Li, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2505.00690}{Paper} | \href{https://metadriverse.github.io/urbansim/}{Project} | \href{https://github.com/metadriverse/urban-sim}{Code}}}
+
+\entry{ICLR 2025}{%
+  \textbf{MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility}
+  \pubtag{Spotlight}\\
+  Wayne Wu$^{*}$, \me$^{*}$, Jack He, Yiran Wang, Chenda Duan, Zhizheng Liu, Quanyi Li, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2407.08725}{Paper} | \href{https://metadriverse.github.io/metaurban/}{Project} | \href{https://github.com/metadriverse/metaurban}{Code}}}
+
+% Compact list: title, shortened author list (lead author ... me ... last author).
+\pubgroup{Other Publications}
+
+\entry{CoRL 2026}{\small%
+  BridgeSim: Unveiling the OL--CL Gap in End-to-End Autonomous Driving\\
+  Seth Z. Zhao, \ldots, \me, \ldots, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2604.10856}{Paper} | \href{https://vail-ucla.github.io/BridgeSim/}{Project}}}
+
+\entry{CVPR 2026}{\small%
+  AURA: Multi-modal Shared Autonomy for Urban Navigation\\
+  Yukai Ma, \me, Selina Song, Wayne Wu, Bolei Zhou
+  \quad \links{\href{https://vail-ucla.github.io/assets/projects/aura/AURA.pdf}{Paper} | \href{https://vail-ucla.github.io/aura/}{Project}}}
+
+\entry{T-ITS 2024}{\small%
+  Few-Shot Testing of Autonomous Vehicles with Scenario Similarity Learning\\
+  Shu Li, \me, \ldots, Shuo Feng
+  \quad \links{\href{https://arxiv.org/abs/2409.14369}{Paper}}}
+
+\entry{IV 2024}{\small%
+  Few-Shot Scenario Testing for Autonomous Vehicles Based on Neighborhood Coverage and Similarity\\
+  Shu Li, Jingxuan Yang, \me, \ldots, Shuo Feng
+  \quad \links{\href{https://arxiv.org/abs/2402.01795}{Paper}}}
+
+\entry{CVPRW 2024}{\small%
+  KnowMoformer: Knowledge-Conditioned Motion Transformer for Controllable Traffic Scenario Simulation\\
+  \me, Shu Li, \ldots, Shuo Feng
+  \quad \links{\href{https://agents4ad.github.io/assets/cvpr2024/papers/11.pdf}{Paper}}}
+
+\entry{T-ITS 2023}{\small%
+  Adaptive Safety Evaluation for Connected and Automated Vehicles with Sparse Control Variates\\
+  Jingxuan Yang, Haowei Sun, \me, \ldots, Shuo Feng
+  \quad \links{\href{https://ieeexplore.ieee.org/document/10265755}{Paper}}}
+
+\entry{ICCV 2023}{\small%
+  OrthoPlanes: A Novel Representation for Better 3D-Awareness of GANs\\
+  \me$^{*}$, Zhuoqian Yang$^{*}$, Shikai Li, Bo Dai, Wayne Wu
+  \quad \links{\href{https://arxiv.org/abs/2309.15830}{Paper} | \href{https://orthoplanes.github.io}{Project}}}
+
+\entry{ICCV 2023}{\small%
+  DNA-Rendering: A Diverse Neural Actor Repository for High-Fidelity Human-centric Rendering\\
+  Wei Cheng$^{*}$, \ldots, \me, \ldots, Kwan-Yee Lin
+  \quad \links{\href{https://arxiv.org/abs/2307.10173}{Paper} | \href{https://dna-rendering.github.io/}{Project}}}
+
+\entry{ITSC 2022}{\small%
+  Adaptive Testing for Connected and Automated Vehicles with Sparse Control Variates in Overtaking Scenarios\\
+  Jingxuan Yang, \me, \ldots, Henry X. Liu
+  \quad \links{\href{https://ieeexplore.ieee.org/document/9922583}{Paper}}}
+
+\entry{arXiv 2026}{\small%
+  Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D--3D Learning\\
+  Yukai Ma, \ldots, \me, \ldots, Bolei Zhou
+  \quad \links{\href{https://vail-ucla.github.io/walkocc/}{Project}}}
+
+\entry{arXiv 2026}{\small%
+  Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation\\
+  Zhenghao Peng, \me, \ldots, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2606.20458}{Paper}}}
+
+\entry{arXiv 2025}{\small%
+  Dreamland: Controllable World Creation with Simulator and Generative Models\\
+  Sicheng Mo, \ldots, \me, Bolei Zhou
+  \quad \links{\href{https://arxiv.org/abs/2506.08006}{Paper} | \href{https://metadriverse.github.io/dreamland/}{Project}}}
 
 %---------------------------------------- awards
 \section{Awards and Honors}
